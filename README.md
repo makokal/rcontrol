@@ -1,4 +1,5 @@
-rcontrol
+Resevior Self Control in Echo State Networks
 ========
 
-Reservoir Self Control in Echo State Networks
+TODO
+- Add a proper description
