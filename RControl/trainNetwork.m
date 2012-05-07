@@ -130,14 +130,14 @@ disp(sprintf('average output weights = %s', num2str(mean(abs(W_output')))));
 
 
 % input plot
-% figure(fig2);
-% subplot(inputLength,1,1);
-% plot(inputPL(1,:));
-% title('final effective inputs','FontSize',8);
-% for k = 2:inputLength
-%     subplot(inputLength,1,k);
-%     plot(inputPL(k,:));
-% end
+figure(8);
+subplot(inputLength,1,1);
+plot(inputPL(1,:));
+title('final effective inputs','FontSize',8);
+for k = 2:inputLength
+    subplot(inputLength,1,k);
+    plot(inputPL(k,:));
+end
 
 
 % plot first 4 (maximally) of internal states listed in plotStates

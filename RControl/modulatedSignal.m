@@ -12,7 +12,6 @@ function modSig  = modulatedSignal( sig, cFreq, mIndex )
 n = 0:length(sig)-1;
 carrierSignal   = sin(2 * pi * 0.5*cFreq * n);
 
-% modSig          = (1 + mIndex * sig).* carrierSignal;
 modSig          = (mIndex * sig) + carrierSignal;
 
 end

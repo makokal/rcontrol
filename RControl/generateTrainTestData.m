@@ -3,11 +3,13 @@ disp('Generating data ............');
 
 
 % create modulated input sequence
-signal      = unmodulatedSignal(signalFreq, samplelength, fChangeProb);
+signal      = unmodulatedSignal(signalSteps, samplelength, fChangeProb);
 sampleinput = modulatedSignal(signal, carrierFreq, modIndex);
+% sampleinput = signal; % testing the unmodulated case
+
 
 % create a sample output
-sampleout = unmodulatedSignalOut(signalFreq, samplelength);
+sampleout = unmodulatedSignalOut(signalSteps, samplelength, fChangeProb);
 
 % plot generated sampleout
 figure(1); %clf;

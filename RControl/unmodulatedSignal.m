@@ -1,19 +1,29 @@
-function signal = unmodulatedSignal( freq, len, sp )
+function signal = unmodulatedSignal( step, len, prob )
 
 %% ----------------------------------------------------------------------
-% UNMODULATEDSIGNAL Generates an unmodulated sine wave of set frequency
+% UNMODULATEDSIGNAL Generates an unmodulated signal of set frequency and
+% length
 %
-% freq  - Frequency (e.g 0.01)
-% len   - Length of the signal
-% sp  - probability of frequency switch
+%   step  - step sizes for the binary oscillators
+%   len   - Length of the signal
+%   prob  - probability of frequency switch
 %
 %% ----------------------------------------------------------------------
 
-signal = spike(1/freq, len);
+% generate the two signals for switching
+sig1 = stepOscillator(len, step(1));
+sig2 = stepOscillator(len, step(2));
 
-for i=1:len
-    if rand < sp
-        signal(i) =  0.0;
+% preallocation for speed
+signal = zeros(1,len);
+
+
+% switch between the signals with a probability of prob
+for i = 1:len
+    if rand > prob
+        signal(i) =  sig1(i);
+    else
+        signal(i) =  sig2(i);
     end
 end
 

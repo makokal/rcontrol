@@ -1,18 +1,15 @@
-function signal = unmodulatedSignalOut( freq, len )
+function signal = unmodulatedSignalOut( step, len, prob )
 
 %% ----------------------------------------------------------------------
-% UNMODULATEDSIGNAL Generates the expected output
+% UNMODULATEDSIGNAL Generates the expected output (no modulations)
 %
-% freq  - Frequency (e.g 0.01)
+% step  - Frequency (e.g 0.01)
 % len   - Length of the signal
 %
 %% ----------------------------------------------------------------------
 
-n = 0:len;
 
-% signal = sin(2 * pi * freq * n);
-signal = spike(1/freq, len);
-
+signal = unmodulatedSignal(step, len, prob);
 
 
 end

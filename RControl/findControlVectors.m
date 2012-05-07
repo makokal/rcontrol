@@ -2,7 +2,6 @@
 
 % xbar = full_state(1:netDim) - mean(full_state(1:netDim));
 xbar = stateCollectMat - repmat(mean(stateCollectMat), size(stateCollectMat,1),1 );
-cvecs = [];
 
 % for i = 1:4
 %     pi          = P(:,i);
@@ -14,5 +13,5 @@ cvecs = (P * xbar);
 
 figure(7);
 % plot the control vectors
-plot(cvecs)
+plot(cvecs')
 title('Control Vectors (4)','FontSize',8);
